@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-29T18:41:48.252Z",
+    "end": "2026-01-29T18:41:56.614Z",
+    "duration": 8362,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8fc04e2e-a83d-4867-9c4d-618cf26c0047",
+      "title": "",
+      "fullFile": "tests\\e2e\\signup_login.cy.js",
+      "file": "tests\\e2e\\signup_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cfd8fd24-0f3d-4ad0-87d4-b659d11394ee",
+          "title": "Signup → Logout → Login → Logout (chained, consistent)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign up a new user,logout, login with same user, logout",
+              "fullTitle": "Signup → Logout → Login → Logout (chained, consistent) Sign up a new user,logout, login with same user, logout",
+              "timedOut": null,
+              "duration": 8119,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const ts = Date.now();\nconst username = `${_testData.default.user.prefix}${ts}`;\nconst password = `${_testData.default.user.passwordPrefix}${ts}${_testData.default.user.passwordSuffix}`;\nhome.launchUrl();\n// Signup\nsignup.clickSignup();\nsignup.fill(username, password);\nsignup.submitAndAssert();\n// Login\nlogin.clickLogin();\nlogin.login(username, password);\nlogin.verifyLoggedIn(username);\n// Logout\nlogin.logout();",
+              "err": {},
+              "uuid": "81ca08aa-85e8-47e7-9cd3-1eb03b0fc509",
+              "parentUUID": "cfd8fd24-0f3d-4ad0-87d4-b659d11394ee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "81ca08aa-85e8-47e7-9cd3-1eb03b0fc509"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8119,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "tests/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "user": {
+    "prefix": "user_",
+    "passwordPrefix": "Pass_",
+    "passwordSuffix": "1234"
+  },
+  "checkout": {
+    "name": "Senior Test Engineer",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "card": "1234567891234567",
+    "month": "12",
+    "year": "2028"
+  },
+  "categories": [
+    "phone",
+    "notebook",
+    "monitor"
+  ],
+  "productSample": "Samsung galaxy s6"
+}

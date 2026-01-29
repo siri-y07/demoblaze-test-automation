@@ -1,0 +1,23 @@
+{
+  "name": "demoblaze-cypress-pom",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Cypress POM tests for Demoblaze (headless + Mochawesome + CI)",
+  "scripts": {
+    "pretest": "rimraf tests/reports || true",
+    "test": "cypress run --browser electron --headless",
+    "test:chrome": "cypress run --browser chrome --headless",
+    "test:firefox": "cypress run --browser firefox --headless",
+    "report": "node tests/utils/merge-report.js",
+    "report:merge": "mochawesome-merge tests/reports/.jsons/*.json > tests/reports/report.json",
+    "report:generate": "marge tests/reports/report.json --reportDir tests/reports --inline",
+    "posttest": "npm run report:merge && npm run report:generate"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^5.0.7"
+  }
+}

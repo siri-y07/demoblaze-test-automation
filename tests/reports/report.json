@@ -1,0 +1,280 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2026-01-29T18:41:03.202Z",
+    "end": "2026-01-29T18:41:56.614Z",
+    "duration": 53412
+  },
+  "results": [
+    {
+      "uuid": "00e00b1b-fa78-48bd-acda-514a656c6ff7",
+      "title": "",
+      "fullFile": "tests\\e2e\\categories.cy.js",
+      "file": "tests\\e2e\\categories.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4778b2e8-2395-417f-aa1e-684ab9200440",
+          "title": "Categories",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigate through categories section",
+              "fullTitle": "Categories Navigate through categories section",
+              "timedOut": null,
+              "duration": 3969,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.launchUrl();\n_testData.default.categories.forEach(cat => {\n  home.openCategory(cat);\n  cy.get(home.cards).should('have.length.greaterThan', 0);\n});",
+              "err": {},
+              "uuid": "5a63f6d2-01cd-4711-b9d6-4528e072a916",
+              "parentUUID": "4778b2e8-2395-417f-aa1e-684ab9200440",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a63f6d2-01cd-4711-b9d6-4528e072a916"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3969,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "82faf57a-6209-49ec-808b-2caf9c0b04e3",
+      "title": "",
+      "fullFile": "tests\\e2e\\place_order.cy.js",
+      "file": "tests\\e2e\\place_order.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2ddd94be-0222-4f0b-a4e7-ed648cf9c54a",
+          "title": "Place Order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Complete end to end purchase flow",
+              "fullTitle": "Place Order Complete end to end purchase flow",
+              "timedOut": null,
+              "duration": 12972,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.launchUrl();\nhome.openCategory('phone');\nproduct.openProductByName(_testData.default.productSample);\nproduct.addToCartAndAssert();\nproduct.goToCart();\norder.open();\norder.fillAndPurchase(_testData.default.checkout);",
+              "err": {},
+              "uuid": "13a75e1d-bb66-4ac1-8450-46aad8d904e8",
+              "parentUUID": "2ddd94be-0222-4f0b-a4e7-ed648cf9c54a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "13a75e1d-bb66-4ac1-8450-46aad8d904e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12972,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "8fc04e2e-a83d-4867-9c4d-618cf26c0047",
+      "title": "",
+      "fullFile": "tests\\e2e\\signup_login.cy.js",
+      "file": "tests\\e2e\\signup_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cfd8fd24-0f3d-4ad0-87d4-b659d11394ee",
+          "title": "Signup → Logout → Login → Logout (chained, consistent)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign up a new user,logout, login with same user, logout",
+              "fullTitle": "Signup → Logout → Login → Logout (chained, consistent) Sign up a new user,logout, login with same user, logout",
+              "timedOut": null,
+              "duration": 8119,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const ts = Date.now();\nconst username = `${_testData.default.user.prefix}${ts}`;\nconst password = `${_testData.default.user.passwordPrefix}${ts}${_testData.default.user.passwordSuffix}`;\nhome.launchUrl();\n// Signup\nsignup.clickSignup();\nsignup.fill(username, password);\nsignup.submitAndAssert();\n// Login\nlogin.clickLogin();\nlogin.login(username, password);\nlogin.verifyLoggedIn(username);\n// Logout\nlogin.logout();",
+              "err": {},
+              "uuid": "81ca08aa-85e8-47e7-9cd3-1eb03b0fc509",
+              "parentUUID": "cfd8fd24-0f3d-4ad0-87d4-b659d11394ee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "81ca08aa-85e8-47e7-9cd3-1eb03b0fc509"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8119,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9ed03339-fbbd-4edb-9e8e-2de80c441eed",
+      "title": "",
+      "fullFile": "tests\\e2e\\cart.cy.js",
+      "file": "tests\\e2e\\cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be1f4ec9-1cad-43a6-bca6-4e1d5ebd2e2b",
+          "title": "Cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add products to cart",
+              "fullTitle": "Cart Add products to cart",
+              "timedOut": null,
+              "duration": 10504,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.launchUrl();\nhome.openCategory('phone');\nproduct.openProductByName(_testData.default.productSample);\nproduct.addToCartAndAssert();\nproduct.goToCart();\ncart.assertProductPresent(_testData.default.productSample);",
+              "err": {},
+              "uuid": "67fbc3a7-bfe6-4bcc-ae08-678acf4bb238",
+              "parentUUID": "be1f4ec9-1cad-43a6-bca6-4e1d5ebd2e2b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "67fbc3a7-bfe6-4bcc-ae08-678acf4bb238"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10504,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "tests/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
