@@ -7,33 +7,8 @@ It is designed to validate critical user flows of the Demoblaze demo application
 
 # File Path Structure
 
-DEMOBLAZE-CYPRESS-POM-HEADLESS/
-├── .github/
-├── Assessment_Automation_Test_Results/
-├── Assessment_Defects/
-│   └── Assessment Task_ Defect Report.pdf
-├── Assessment_TestPlan/
-│   └── Assessment Task_ Test Plan.pdf
-├── cypress/
-│   ├── downloads/
-│   ├── support/
-│   └── videos/
-├── node_modules/
-├── tests/
-│   └── e2e/
-│       ├── cart.cy.js
-│       ├── categories.cy.js
-│       ├── place_order.cy.js
-│       └── signup_login.cy.js
-├── fixtures/
-├── pages/
-├── reports/
-├── utils/
-├── .gitignore
-├── cypress.config.js
-├── package-lock.json
-├── package.json
-└── README.md
+<img width="362" height="527" alt="image" src="https://github.com/user-attachments/assets/80d2f4ef-fc1a-4e9f-aa44-b6fbf14039e3" />
+
 
 --------------------------------
 
